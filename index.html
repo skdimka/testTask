@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Тестовое задание</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="conteiner">
+        <h1 class="title">Список Forbes</h1>
+        <label>Выберете количество отображаемых людей:
+            <input class="numberOfElements" type="number" value="10" min="1" pattern="^0*[1-9]\d*$">
+        </label>
+        <label class="labelSort">Сортировать по
+            <select class="sortSelection">
+                <option value="sortDefault">умолчанию</option>
+                <option value="sortMoney">состоянию</option>
+                <option value="sortAge">возрасту </option>
+            </select>
+        </label>
+        <ul class="draggable-list" id="draggable-list">
+            <div class="circle"></div>
+        </ul>
+    </div>
+    <div class="publicname">
+        <p>Тестовое задание на позицию «Разработчик JS»</p>
+        <p>Скопинцев Дмитрий</p>
+    </div>
+    <script src="src/script.js"></script>
+</body>
+
+</html>

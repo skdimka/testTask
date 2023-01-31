@@ -1,0 +1,230 @@
+:root {
+    --border-color: #dbdcdb;
+    --background-color: #676767;
+    --background-color-input: #c1c1c1;
+    --background-color-card: #a8a8a8;
+    --text-color: #262a2d;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    background-color: #e3e3e3;
+}
+
+.conteiner {
+    margin-left: 10px;
+}
+
+.title {
+    text-align: center;
+}
+
+.conteiner label {
+    margin: 0 0 50px 50px;
+}
+
+
+.numberOfElements {
+    background-color: var(--background-color-input);
+    margin: 5px;
+    display: line;
+    height: 25px;
+    border-radius: 5px;
+}
+
+.labelSort {
+    display: block;
+    border: 1px solid #b5b5b5;
+    border-radius: 5px;
+    width: max-content;
+    margin: 50px;
+    background-color: var(--background-color-input);
+    padding: 2px;
+}
+
+.sortSelection {
+    background-color: var(--background-color-input);
+    border-radius: 5px;
+}
+
+.draggable-list {
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    padding: 0;
+    padding-bottom: 100px;
+    list-style-type: none;
+    min-height: 1000px;
+    margin: 50px;
+}
+
+.draggable-list li {
+    background-color: #e3e3e3;
+    display: flex;
+    flex: 1;
+    border: dotted;
+    width: 300px;
+}
+
+
+.draggable-list li.over .draggable {
+    background-color: var(--background-color);
+}
+
+.draggable-list .person-name {
+    margin-right: 20px;
+}
+
+.draggable {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    flex: 1;
+    position: relative;
+
+}
+
+.draggable:hover {
+    background-color: var(--background-color-input);
+}
+
+
+.card {
+    display: none;
+    position: absolute;
+    width: 600px;
+    height: max-content;
+    background-color: var(--background-color-card);
+    color: rgb(0, 0, 0);
+    box-shadow: 0 0 0 7px var(--background-color-card), 0 0 0 7px #fff;
+    margin-left: 300px;
+    top: 0.3rem;
+}
+
+.cardinfo {
+    display: flex;
+    margin-left: 15px;
+}
+
+.cardinfo h2 {
+    margin-left: 40px;
+}
+
+.bio {
+    font-style: italic;
+}
+
+.card p {
+    margin-left: 10px;
+    padding: 0;
+}
+
+.draggable:hover .card {
+    background-color: var(--background-color-card);
+    display: block;
+}
+
+.draggable:hover:active .card {
+    display: none;
+}
+
+
+.person-name {
+    margin-left: 60px;
+    margin-right: 20px;
+}
+
+.publicname {
+    color: var(--text-color);
+    opacity: 0.5;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.circle {
+    position: absolute;
+    margin-left: 600px;
+    top: 30%;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 10px solid rgba(255, 225, 255, .1);
+    border-top: 10px solid #fff;
+    animation: animate 2s infinite linear
+}
+
+@keyframes animate {
+    0% {
+        transform: translate(20%, 50%) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(20%, 50%)rotate(360deg);
+    }
+}
+
+@media (max-width: 450px) {
+    .conteiner {
+        padding: 0x;
+    }
+
+    .conteiner label {
+        font-size: 0.8rem;
+    }
+
+    .labelSort {
+        display: inline;
+    }
+
+    .draggable-list {
+        display: block;
+        min-height: 1000px;
+        margin: 0 0 10px 0;
+        margin-top: 10px;
+        padding: 0;
+    }
+
+    .draggable-list li {
+        display: block;
+        width: 48%;
+        height: 50px;
+
+    }
+
+    .person-name {
+        margin: 0;
+        text-align: center;
+    }
+
+    .card {
+        width: 180px;
+        height: max-content;
+        background-color: rgb(115, 115, 115);
+        margin-left: 180px;
+        position: absolute;
+    }
+
+    .card p {
+        font-size: 0.8rem;
+    }
+
+    .cardinfo h2 {
+        display: none;
+    }
+
+    .cardinfo img {
+        width: 120px;
+        height: 120px;
+    }
+}
